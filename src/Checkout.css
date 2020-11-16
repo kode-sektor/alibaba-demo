@@ -2,9 +2,8 @@
     width: 100%;
     margin-bottom: 10px;
 }
-.checkout__ad {
-    width: 100%;
-    margin-bottom: 10px;
+.checkout__header{
+    display: flex;
 }
 .checkout__title {
     margin-right: 10px;
