@@ -9,9 +9,15 @@ import Checkout from './Checkout'
 import Login from './Login'
 import Payment from './Payment'
 
+// Stripe
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import './App.css';
+
+const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY)
 
 function App() {
 
@@ -49,7 +55,9 @@ function App() {
                     </Route>
                     <Route path="/payment">
                         <Header />
-                        <Payment />
+                        <Elements stripe={promise}>
+                            <Payment />
+                        </Elements>
                     </Route>
                     <Route path="/">
                         <Header />

@@ -5,9 +5,13 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "@stripe/react-stripe-js": "^1.1.2",
+    "@stripe/stripe-js": "^1.11.0",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.1.2",
     "@testing-library/user-event": "^12.2.2",
+    "dotenv": "^8.2.0",
+    "env-cmd": "^10.1.0",
     "firebase": "^8.0.2",
     "react": "^17.0.1",
     "react-currency-format": "^1.0.0",
@@ -18,7 +22,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:staging": "env-cmd -f .env.staging react-scripts start",
+    "start:prod": "env-cmd -f .env.production react-scripts start",
     "build": "react-scripts build",
+    "build:staging": "env-cmd -f .env.staging react-scripts build",
+    "build:prod": "env-cmd -f .env.production react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
