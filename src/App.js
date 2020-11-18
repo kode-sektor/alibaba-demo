@@ -8,6 +8,7 @@ import Home from './Home'
 import Checkout from './Checkout'
 import Login from './Login'
 import Payment from './Payment'
+import Orders from './Orders'
 
 // Stripe
 import { loadStripe } from "@stripe/stripe-js";
@@ -46,6 +47,9 @@ function App() {
         <Router>
             <div className="app">
                 <Switch>
+                    <Route path="/orders">
+                        <Orders />
+                    </Route>
                     <Route path="/login">
                         <Login />
                     </Route>
